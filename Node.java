@@ -1,3 +1,5 @@
 public class Node {
-    public 
+    public String data;
+    public Node next;
+
 }
