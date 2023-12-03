@@ -24,5 +24,8 @@ public class Main {
         System.out.println(lista.search(2).data);
         System.out.println(lista.search(3).data);
         System.out.println(lista.search(4).data);
+        System.out.println("Insertando antes del último: ");
+        lista.insertBeforeLast("F");
+        System.out.println(lista);
     }
 }

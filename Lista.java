@@ -1,4 +1,9 @@
-
+/*
+ * Buscar un nodo por su posición, enumerando el primero con la posición 0, el siguiente como el 1,
+ * etc. y devolver una referencia a él. 
+ * Insertar un nuevo nodo antes del último.
+ * Intercambiar un nodo por otro buscado.
+ */
 public class Lista {
     private Node top;
 
@@ -6,7 +11,7 @@ public class Lista {
         top = null;
     }
 
-    // Agregar un nodo antes del ultimo
+    // Agregar un nodo
     public void add(String data) {
         Node temp = new Node();
         temp.data = data;
@@ -15,6 +20,31 @@ public class Lista {
         } else {
             temp.next = top;
             top = temp;
+        }
+    }
+
+    // Insertar un nuevo nodo antes del último
+    public void insertBeforeLast(String data) {
+        Node temp = top;
+        Node temp1 = null;
+        while (temp != null) {
+            if (temp.next == null) {
+                temp1 = temp;
+            }
+            temp = temp.next;
+        }
+        if (temp1 != null) {
+            Node temp2 = new Node();
+            temp2.data = data;
+            temp2.next = temp1;
+            temp = top;
+            while (temp != null) {
+                if (temp.next == temp1) {
+                    temp.next = temp2;
+                    break;
+                }
+                temp = temp.next;
+            }
         }
     }
 
